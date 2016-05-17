@@ -1,0 +1,20 @@
+PODS:
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - R.swift (2.1.0):
+    - R.swift.Library (~> 2.0.0)
+  - R.swift.Library (2.0.0)
+
+DEPENDENCIES:
+  - ChameleonFramework/Swift
+  - R.swift
+
+SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  R.swift: efff131531b5cf142e28fd94957806ff71ccbcf2
+  R.swift.Library: 9f4b2d12040daa1ffe336d8f7e1574f73721fd01
+
+PODFILE CHECKSUM: 10980db52ddc1b62875642be4c2cc8c86bbd69fa
+
+COCOAPODS: 1.0.0
