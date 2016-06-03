@@ -18,7 +18,7 @@
 		1D80F89C1CEAA123003241A5 /* VSCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D80F89B1CEAA123003241A5 /* VSCoreDataManager.swift */; };
 		1D80F89F1CEAA29E003241A5 /* NSManagedObjectContext+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D80F89E1CEAA29E003241A5 /* NSManagedObjectContext+Convenience.swift */; };
 		1DAB8D261D012E4600F41DDC /* NSDate+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB8D251D012E4600F41DDC /* NSDate+Convenience.swift */; };
-		1DAB8D281D01362200F41DDC /* VSMonthlyCalendarDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB8D271D01362200F41DDC /* VSMonthlyCalendarDatasource.swift */; };
+		1DAB8D281D01362200F41DDC /* VSMonthlyCalendarDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB8D271D01362200F41DDC /* VSMonthlyCalendarDatasourceProtocol.swift */; };
 		1DAB8D2A1D013C5A00F41DDC /* VSAnnualCalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB8D291D013C5A00F41DDC /* VSAnnualCalendarCollectionView.swift */; };
 		1DAB8D2D1D013E8C00F41DDC /* VSAnnualCalendarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB8D2C1D013E8C00F41DDC /* VSAnnualCalendarDataSource.swift */; };
 		1DAB8D301D0140CA00F41DDC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB8D2F1D0140CA00F41DDC /* R.generated.swift */; };
@@ -61,7 +61,7 @@
 		1D80F89B1CEAA123003241A5 /* VSCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSCoreDataManager.swift; sourceTree = "<group>"; };
 		1D80F89E1CEAA29E003241A5 /* NSManagedObjectContext+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Convenience.swift"; sourceTree = "<group>"; };
 		1DAB8D251D012E4600F41DDC /* NSDate+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Convenience.swift"; sourceTree = "<group>"; };
-		1DAB8D271D01362200F41DDC /* VSMonthlyCalendarDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSMonthlyCalendarDatasource.swift; sourceTree = "<group>"; };
+		1DAB8D271D01362200F41DDC /* VSMonthlyCalendarDatasourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSMonthlyCalendarDatasourceProtocol.swift; sourceTree = "<group>"; };
 		1DAB8D291D013C5A00F41DDC /* VSAnnualCalendarCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSAnnualCalendarCollectionView.swift; sourceTree = "<group>"; };
 		1DAB8D2C1D013E8C00F41DDC /* VSAnnualCalendarDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSAnnualCalendarDataSource.swift; sourceTree = "<group>"; };
 		1DAB8D2F1D0140CA00F41DDC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -197,10 +197,10 @@
 		1D80F89D1CEAA28B003241A5 /* 6. Functionality */ = {
 			isa = PBXGroup;
 			children = (
+				1DAB8D251D012E4600F41DDC /* NSDate+Convenience.swift */,
 				1D80F89E1CEAA29E003241A5 /* NSManagedObjectContext+Convenience.swift */,
 				1DB815171CFFDA82002BBDA3 /* VSAnnualCalendarDataSourceProtocol.swift */,
-				1DAB8D251D012E4600F41DDC /* NSDate+Convenience.swift */,
-				1DAB8D271D01362200F41DDC /* VSMonthlyCalendarDatasource.swift */,
+				1DAB8D271D01362200F41DDC /* VSMonthlyCalendarDatasourceProtocol.swift */,
 			);
 			name = "6. Functionality";
 			sourceTree = "<group>";
@@ -555,7 +555,7 @@
 				1D80F89C1CEAA123003241A5 /* VSCoreDataManager.swift in Sources */,
 				1D80F8671CEA9D73003241A5 /* VSAppDelegate.swift in Sources */,
 				1DAB8D301D0140CA00F41DDC /* R.generated.swift in Sources */,
-				1DAB8D281D01362200F41DDC /* VSMonthlyCalendarDatasource.swift in Sources */,
+				1DAB8D281D01362200F41DDC /* VSMonthlyCalendarDatasourceProtocol.swift in Sources */,
 				1D80F86F1CEA9D73003241A5 /* Mood_Diary.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

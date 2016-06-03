@@ -1,5 +1,5 @@
 //
-//  VSAnnualCalendarDataSource.swift
+//  VSAnnualCalendarDataSourceProtocol.swift
 //  Mood Diary
 //
 //  Created by Vikas Shah on 6/1/16.
@@ -13,6 +13,9 @@ protocol VSAnnualCalendarDataSourceProtocol {
     var endDate: NSDate { get }
     
     func numberOfYearsBetweenDates() -> Int
+    
+    func titleForYear() -> String
+//    func titleForMonth() -> String
 }
 
 extension VSAnnualCalendarDataSourceProtocol {
