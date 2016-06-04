@@ -9,19 +9,34 @@
 import UIKit
 
 class VSAnnualCalendarCollectionView: UICollectionViewController {
-    let annualDataSource = VSAnnualCalendarDataSource()
+    let calendarDataSource = VSCalendarDataSource()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionView?.registerNib(R.nib.vSMonthCell)
+    }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return annualDataSource.numberOfYearsBetweenDates()
+        return calendarDataSource.numberOfYearsInbetweenStartAndEndDates()
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return annualDataSource.numberOfMonthsInYear
+        return calendarDataSource.numberOfMonthsInYear
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(R.reuseIdentifier.monthCell.identifier, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(R.reuseIdentifier.monthCell, forIndexPath: indexPath)!
+        
+        cell.titleLabel.text = calendarDataSource.title(forMonth: indexPath.row)
+        let month = indexPath.row
+        let year = indexPath.section
+        cell.configure(forMonth: month, year: year, calendar: calendarDataSource.calendar)
         
         return cell
     }
+    
+//    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+//        
+//    }
 }
