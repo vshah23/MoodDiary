@@ -37,17 +37,13 @@ class VSMonthCell: UICollectionViewCell {
     }
 }
 
-extension VSMonthCell: UICollectionViewDataSource {
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
+extension VSMonthCell: UICollectionViewDataSource {  
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let calendar = sharedCalendar,
             let date = date else {
                 return 0
         }
-        let range = calendar.rangeOfUnit(.Month, inUnit: .Calendar, forDate: date)
+        let range = calendar.rangeOfUnit(.Day, inUnit: .Month, forDate: date)
         return range.length
     }
     

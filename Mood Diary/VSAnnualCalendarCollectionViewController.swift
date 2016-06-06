@@ -1,5 +1,5 @@
 //
-//  VSAnnualCalendarCollectionView.swift
+//  VSAnnualCalendarCollectionViewController.swift
 //  Mood Diary
 //
 //  Created by Vikas Shah on 6/2/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VSAnnualCalendarCollectionView: UICollectionViewController {
+class VSAnnualCalendarCollectionViewController: UICollectionViewController {
     let calendarDataSource = VSCalendarDataSource()
     
     override func viewDidLoad() {
