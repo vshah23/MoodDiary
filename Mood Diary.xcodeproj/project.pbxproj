@@ -288,8 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				1DAB8D451D03677900F41DDC /* VSAnnualCalendarCollectionViewController */,
-				1DAB8D3D1D034A0800F41DDC /* VSDayCell */,
-				1DAB8D321D03310200F41DDC /* VSMonthCell */,
 				1DAB8D461D0367A700F41DDC /* VSMonthlyCalendarCollectionViewController */,
 			);
 			name = "2. View";
@@ -316,6 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				1D81F7CC1D05118100054A39 /* VSCalendarCollectionViewController.storyboard */,
+				1DAB8D3D1D034A0800F41DDC /* VSDayCell */,
+				1DAB8D321D03310200F41DDC /* VSMonthCell */,
 			);
 			name = VSAnnualCalendarCollectionViewController;
 			sourceTree = "<group>";

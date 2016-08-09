@@ -17,6 +17,11 @@ class VSAnnualCalendarCollectionViewController: UICollectionViewController {
         collectionView?.registerNib(R.nib.vSMonthCell)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return calendarDataSource.numberOfYearsInbetweenStartAndEndDates()
     }
@@ -39,4 +44,10 @@ class VSAnnualCalendarCollectionViewController: UICollectionViewController {
 //    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
 //        
 //    }
+}
+
+extension VSAnnualCalendarCollectionViewController {
+    func scrollToCurrentMonth(animated: Bool) {
+        let indexPath = NSIndexPath(forItem: <#T##Int#>, inSection: <#T##Int#>)
+    }
 }
