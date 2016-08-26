@@ -28,7 +28,7 @@ class VSMonthCell: UICollectionViewCell {
         
         let flowLayout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = flowLayout
-        flowLayout.
+//        flowLayout.
     }
     
     func configure(forMonth month: Int, year: Int, calendar: NSCalendar) {
@@ -66,5 +66,17 @@ extension VSMonthCell: UICollectionViewDelegate {
 }
 
 extension VSMonthCell: UICollectionViewDelegateFlowLayout {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let width = frame.size.width / 7
+        let height = frame.size.height / 6
+        return CGSizeMake(width, height)
+    }
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 2
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 0
+    }
 }

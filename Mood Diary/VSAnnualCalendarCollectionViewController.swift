@@ -47,7 +47,32 @@ class VSAnnualCalendarCollectionViewController: UICollectionViewController {
 }
 
 extension VSAnnualCalendarCollectionViewController {
-    func scrollToCurrentMonth(animated: Bool) {
-        let indexPath = NSIndexPath(forItem: <#T##Int#>, inSection: <#T##Int#>)
+//    func scrollToCurrentMonth(animated: Bool) {
+//        let indexPath = NSIndexPath(forItem: <#T##Int#>, inSection: <#T##Int#>)
+//    }
+}
+
+extension VSAnnualCalendarCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let width = (collectionView.bounds.width - 20) / 3
+        return CGSizeMake(width, width) //1:1
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let width = collectionView.bounds.size.width
+        let height = (collectionView.bounds.size.width - 20) / 3 / 2
+        return CGSizeMake(width, height)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSizeZero
     }
 }
