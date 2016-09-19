@@ -14,6 +14,6 @@ class VSCalendarDataSource: VSCalendarDataSourceProtocol {
     }
     
     func title(forMonth month: Int) -> String {
-        return NSCalendar.currentCalendar().shortMonthSymbols[month]
+        return NSCalendar.currentCalendar().shortMonthSymbols[month].uppercaseString
     }
 }

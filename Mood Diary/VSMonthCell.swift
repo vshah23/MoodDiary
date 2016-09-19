@@ -25,10 +25,6 @@ class VSMonthCell: UICollectionViewCell {
         super.awakeFromNib()
         
         collectionView.registerNib(R.nib.vSDayCell)
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        collectionView.collectionViewLayout = flowLayout
-//        flowLayout.
     }
     
     func configure(forMonth month: Int, year: Int, calendar: NSCalendar) {
