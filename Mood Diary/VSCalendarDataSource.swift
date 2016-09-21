@@ -14,6 +14,10 @@ class VSCalendarDataSource: VSCalendarDataSourceProtocol {
     }
     
     func title(forMonth month: Int) -> String {
-        return NSCalendar.currentCalendar().shortMonthSymbols[month].uppercaseString
+        guard month <= numberOfMonthsInYear else {
+            return String()
+        }
+        
+        return calendar.shortMonthSymbols[month - 1].uppercaseString //subtract 1 for zero indexing
     }
 }

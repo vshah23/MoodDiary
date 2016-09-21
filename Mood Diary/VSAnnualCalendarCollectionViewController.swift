@@ -33,10 +33,11 @@ class VSAnnualCalendarCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(R.reuseIdentifier.monthCell, forIndexPath: indexPath)!
         
-        cell.titleLabel.text = calendarDataSource.title(forMonth: indexPath.row)
-        let month = indexPath.row
+        let month = indexPath.row + 1 //add one for zero indexing
         let year = indexPath.section
-        cell.configure(forMonth: month, year: year, calendar: calendarDataSource.calendar)
+        
+        cell.titleLabel.text = calendarDataSource.title(forMonth: month)
+        cell.configure(forMonth: month, year: year, dataSource: calendarDataSource)
         
         return cell
     }

@@ -11,7 +11,7 @@ import UIKit
 class VSMonthCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
-    private var sharedCalendar: NSCalendar? {
+    private var sharedDataSource: VSCalendarDataSource? {
         didSet {
             guard date != nil else {
                 return
@@ -27,30 +27,30 @@ class VSMonthCell: UICollectionViewCell {
         collectionView.registerNib(R.nib.vSDayCell)
     }
     
-    func configure(forMonth month: Int, year: Int, calendar: NSCalendar) {
+    func configure(forMonth month: Int, year: Int, dataSource: VSCalendarDataSource) {
         let components = NSDateComponents()
         components.year = year
         components.month = month
         
-        date = calendar.dateFromComponents(components)
-        sharedCalendar = calendar
+        date = dataSource.calendar.dateFromComponents(components)
+        sharedDataSource = dataSource
     }
 }
 
 extension VSMonthCell: UICollectionViewDataSource {  
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let calendar = sharedCalendar,
-            let date = date else {
+        guard let dataSource = sharedDataSource,
+            date = date else {
                 return 0
         }
-        let range = calendar.rangeOfUnit(.Day, inUnit: .Month, forDate: date)
-        return range.length
+        
+        return dataSource.numberOfDaysForMonthInDate(date)
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(R.reuseIdentifier.dayCell, forIndexPath: indexPath)!
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(R.reuseIdentifier.dayCell, forIndexPath: indexPath)!,
+        day = indexPath.row + 1 //add one since indexPaths are zero indexed
         
-        let day = indexPath.row + 1 //add one since indexPaths are zero indexed
         cell.dayLabel.text = "\(day)"
         
         return cell
@@ -64,7 +64,7 @@ extension VSMonthCell: UICollectionViewDelegate {
 extension VSMonthCell: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = frame.size.width / 7
-        let height = frame.size.height / 6
+        let height = frame.size.height / 7
         return CGSizeMake(width, height)
     }
     
