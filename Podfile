@@ -6,7 +6,7 @@ target 'Mood Diary' do
   use_frameworks!
 
   # Pods for Mood Diary
-  pod 'ChameleonFramework/Swift'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git', :branch => 'swift3'
   pod 'R.swift'
   
   target 'Mood DiaryTests' do
