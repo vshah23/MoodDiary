@@ -8,11 +8,11 @@
 
 import CoreData
 
-typealias VSChangeBlock = NSManagedObjectContext -> Void
+typealias VSChangeBlock = (NSManagedObjectContext) -> Void
 typealias VSSaveCompletionHandler = (Bool, NSError?) -> Void
 
 extension NSManagedObjectContext {
-    private func vs_rootSavingContext() -> NSManagedObjectContext {
+    fileprivate func vs_rootSavingContext() -> NSManagedObjectContext {
         return VSCoreDataManager.sharedManager.rootSavingContext
     }
     
@@ -20,16 +20,16 @@ extension NSManagedObjectContext {
         return VSCoreDataManager.sharedManager.mainContext
     }
     
-    private func newPrivateQueuContextWithParent(parentContext: NSManagedObjectContext) -> NSManagedObjectContext {
-        let newContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
-        newContext.parentContext = parentContext
+    fileprivate func newPrivateQueuContextWithParent(_ parentContext: NSManagedObjectContext) -> NSManagedObjectContext {
+        let newContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        newContext.parent = parentContext
         
         return newContext
     }
     
     //MARK: - Saving
     
-    func saveToPersistentStore(synchronously: Bool, completion: VSSaveCompletionHandler?) {
+    func saveToPersistentStore(_ synchronously: Bool, completion: VSSaveCompletionHandler?) {
         var saveResult = false
         var saveError: NSError? = nil
         
@@ -46,10 +46,10 @@ extension NSManagedObjectContext {
                     abort()
                 }
                 defer {
-                    if self.parentContext != nil {
-                        self.parentContext?.saveToPersistentStore(synchronously, completion: completion)
+                    if self.parent != nil {
+                        self.parent?.saveToPersistentStore(synchronously, completion: completion)
                     } else {
-                        dispatch_async(dispatch_get_main_queue(), {
+                        DispatchQueue.main.async(execute: {
                             completion?(saveResult, saveError)
                         })
                     }
@@ -58,25 +58,25 @@ extension NSManagedObjectContext {
             
             //execute save block accordingly
             if synchronously {
-                performBlockAndWait(saveBlock)
+                performAndWait(saveBlock)
             } else {
-                performBlock(saveBlock)
+                perform(saveBlock)
             }
         }
     }
     
-    func saveChanges(changes: VSChangeBlock, completion: VSSaveCompletionHandler? = nil) {
+    func saveChanges(_ changes: @escaping VSChangeBlock, completion: VSSaveCompletionHandler? = nil) {
         let context = newPrivateQueuContextWithParent(vs_rootSavingContext())
-        context.performBlock {
+        context.perform {
             changes(context)
             
             context.saveToPersistentStore(false, completion: completion)
         }
     }
     
-    func saveChangesAndWait(changes: VSChangeBlock) {
+    func saveChangesAndWait(_ changes: @escaping VSChangeBlock) {
         let context = newPrivateQueuContextWithParent(vs_rootSavingContext())
-        context.performBlockAndWait({
+        context.performAndWait({
             changes(context)
             
             context.saveToPersistentStore(true, completion: nil)

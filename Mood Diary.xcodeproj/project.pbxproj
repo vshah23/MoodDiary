@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		08353C6F8FD5CEE45B3E1F79 /* Pods_Mood_DiaryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7105425EC120D569D38B93F2 /* Pods_Mood_DiaryUITests.framework */; };
+		1D0167271D94BD8B00207DAD /* VSTitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0167261D94BD8B00207DAD /* VSTitleHeaderView.swift */; };
+		1D01672B1D94BDF100207DAD /* VSTitleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D01672A1D94BDF100207DAD /* VSTitleHeaderView.xib */; };
 		1D80F8671CEA9D73003241A5 /* VSAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D80F8661CEA9D73003241A5 /* VSAppDelegate.swift */; };
 		1D80F86C1CEA9D73003241A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D80F86A1CEA9D73003241A5 /* Main.storyboard */; };
 		1D80F86F1CEA9D73003241A5 /* Mood_Diary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D80F86D1CEA9D73003241A5 /* Mood_Diary.xcdatamodeld */; };
@@ -17,7 +19,6 @@
 		1D80F88A1CEA9D74003241A5 /* Mood_DiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D80F8891CEA9D74003241A5 /* Mood_DiaryUITests.swift */; };
 		1D80F89C1CEAA123003241A5 /* VSCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D80F89B1CEAA123003241A5 /* VSCoreDataManager.swift */; };
 		1D80F89F1CEAA29E003241A5 /* NSManagedObjectContext+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D80F89E1CEAA29E003241A5 /* NSManagedObjectContext+Convenience.swift */; };
-		1D81F7CD1D05118100054A39 /* VSCalendarCollectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D81F7CC1D05118100054A39 /* VSCalendarCollectionViewController.storyboard */; };
 		1DAB8D261D012E4600F41DDC /* NSDate+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB8D251D012E4600F41DDC /* NSDate+Convenience.swift */; };
 		1DAB8D2A1D013C5A00F41DDC /* VSAnnualCalendarCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB8D291D013C5A00F41DDC /* VSAnnualCalendarCollectionViewController.swift */; };
 		1DAB8D2D1D013E8C00F41DDC /* VSCalendarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB8D2C1D013E8C00F41DDC /* VSCalendarDataSource.swift */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D0167261D94BD8B00207DAD /* VSTitleHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VSTitleHeaderView.swift; path = "Mood Diary/VSTitleHeaderView.swift"; sourceTree = "<group>"; };
+		1D01672A1D94BDF100207DAD /* VSTitleHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VSTitleHeaderView.xib; sourceTree = "<group>"; };
 		1D80F8631CEA9D73003241A5 /* Mood Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mood Diary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D80F8661CEA9D73003241A5 /* VSAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSAppDelegate.swift; sourceTree = "<group>"; };
 		1D80F86B1CEA9D73003241A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,7 +68,6 @@
 		1D80F88B1CEA9D74003241A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D80F89B1CEAA123003241A5 /* VSCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSCoreDataManager.swift; sourceTree = "<group>"; };
 		1D80F89E1CEAA29E003241A5 /* NSManagedObjectContext+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Convenience.swift"; sourceTree = "<group>"; };
-		1D81F7CC1D05118100054A39 /* VSCalendarCollectionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VSCalendarCollectionViewController.storyboard; sourceTree = "<group>"; };
 		1DAB8D251D012E4600F41DDC /* NSDate+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+Convenience.swift"; path = "Mood Diary/NSDate+Convenience.swift"; sourceTree = "<group>"; };
 		1DAB8D291D013C5A00F41DDC /* VSAnnualCalendarCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VSAnnualCalendarCollectionViewController.swift; path = "Mood Diary/VSAnnualCalendarCollectionViewController.swift"; sourceTree = "<group>"; };
 		1DAB8D2C1D013E8C00F41DDC /* VSCalendarDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VSCalendarDataSource.swift; path = "Mood Diary/VSCalendarDataSource.swift"; sourceTree = "<group>"; };
@@ -115,6 +117,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D0167281D94BDCA00207DAD /* VSTitleHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				1D0167261D94BD8B00207DAD /* VSTitleHeaderView.swift */,
+				1D01672A1D94BDF100207DAD /* VSTitleHeaderView.xib */,
+			);
+			name = VSTitleHeaderView;
+			sourceTree = "<group>";
+		};
 		1D80F85A1CEA9D73003241A5 = {
 			isa = PBXGroup;
 			children = (
@@ -313,7 +324,7 @@
 		1DAB8D451D03677900F41DDC /* VSAnnualCalendarCollectionViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1D81F7CC1D05118100054A39 /* VSCalendarCollectionViewController.storyboard */,
+				1D0167281D94BDCA00207DAD /* VSTitleHeaderView */,
 				1DAB8D3D1D034A0800F41DDC /* VSDayCell */,
 				1DAB8D321D03310200F41DDC /* VSMonthCell */,
 			);
@@ -423,18 +434,21 @@
 			attributes = {
 				CLASSPREFIX = VS;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Vikas Shah";
 				TargetAttributes = {
 					1D80F8621CEA9D73003241A5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					1D80F8791CEA9D73003241A5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 1D80F8621CEA9D73003241A5;
 					};
 					1D80F8841CEA9D74003241A5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 1D80F8621CEA9D73003241A5;
 					};
 				};
@@ -466,10 +480,10 @@
 			files = (
 				1D80F8741CEA9D73003241A5 /* LaunchScreen.storyboard in Resources */,
 				1D80F8711CEA9D73003241A5 /* Assets.xcassets in Resources */,
-				1D81F7CD1D05118100054A39 /* VSCalendarCollectionViewController.storyboard in Resources */,
 				1DAB8D3F1D034A1600F41DDC /* VSDayCell.xib in Resources */,
 				1D80F86C1CEA9D73003241A5 /* Main.storyboard in Resources */,
 				1DAB8D341D03312300F41DDC /* VSMonthCell.xib in Resources */,
+				1D01672B1D94BDF100207DAD /* VSTitleHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +651,7 @@
 				1DAB8D2D1D013E8C00F41DDC /* VSCalendarDataSource.swift in Sources */,
 				1DB815181CFFDA82002BBDA3 /* VSCalendarDataSourceProtocol.swift in Sources */,
 				1DAB8D361D03315300F41DDC /* VSMonthCell.swift in Sources */,
+				1D0167271D94BD8B00207DAD /* VSTitleHeaderView.swift in Sources */,
 				1DAB8D261D012E4600F41DDC /* NSDate+Convenience.swift in Sources */,
 				1DAB8D3C1D034A0500F41DDC /* VSDayCell.swift in Sources */,
 				1D80F89C1CEAA123003241A5 /* VSCoreDataManager.swift in Sources */,
@@ -711,8 +726,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -757,8 +774,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -777,6 +796,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -786,11 +806,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4BF64B4126B196AB6E1544C8 /* Pods-Mood Diary.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Mood Diary/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vikas.Mood-Diary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -798,11 +820,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B882C295F6B5DD472E240CEA /* Pods-Mood Diary.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Mood Diary/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vikas.Mood-Diary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -815,6 +839,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vikas.Mood-DiaryTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mood Diary.app/Mood Diary";
 			};
 			name = Debug;
@@ -828,6 +853,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vikas.Mood-DiaryTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mood Diary.app/Mood Diary";
 			};
 			name = Release;
@@ -840,6 +866,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vikas.Mood-DiaryUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Mood Diary";
 			};
 			name = Debug;
@@ -852,6 +879,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vikas.Mood-DiaryUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Mood Diary";
 			};
 			name = Release;

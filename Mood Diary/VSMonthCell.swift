@@ -9,9 +9,8 @@
 import UIKit
 
 class VSMonthCell: UICollectionViewCell {
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet private weak var collectionView: UICollectionView!
-    private var sharedDataSource: VSCalendarDataSource? {
+    @IBOutlet fileprivate weak var collectionView: UICollectionView!
+    fileprivate var sharedDataSource: VSCalendarDataSource? {
         didSet {
             guard date != nil else {
                 return
@@ -19,41 +18,58 @@ class VSMonthCell: UICollectionViewCell {
             collectionView.reloadData()
         }
     }
-    private var date: NSDate? = nil
+    fileprivate var date: Date? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        collectionView.registerNib(R.nib.vSDayCell)
+        collectionView.register(R.nib.vSDayCell)
+        collectionView.register(R.nib.vSTitleHeaderView, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader)
     }
     
     func configure(forMonth month: Int, year: Int, dataSource: VSCalendarDataSource) {
-        let components = NSDateComponents()
+        var components = DateComponents()
         components.year = year
         components.month = month
         
-        date = dataSource.calendar.dateFromComponents(components)
+        date = dataSource.calendar.date(from: components)
         sharedDataSource = dataSource
     }
 }
 
 extension VSMonthCell: UICollectionViewDataSource {  
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let dataSource = sharedDataSource,
-            date = date else {
+            let date = date else {
                 return 0
         }
         
         return dataSource.numberOfDaysForMonthInDate(date)
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(R.reuseIdentifier.dayCell, forIndexPath: indexPath)!,
-        day = indexPath.row + 1 //add one since indexPaths are zero indexed
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.dayCell, for: indexPath)!,
+        day = (indexPath as NSIndexPath).row + 1 //add one since indexPaths are zero indexed
         
         cell.dayLabel.text = "\(day)"
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let calendar = sharedDataSource?.calendar,
+            let date = date,
+            kind == UICollectionElementKindSectionHeader else {
+                assertionFailure("Wrong index path for supplementary view")
+                return UICollectionReusableView()
+        }
+        
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                         withReuseIdentifier: R.reuseIdentifier.vSTitleHeaderView,
+                                                                         for: indexPath)!
+        headerView.titleLabel.text = sharedDataSource?.title(forMonth: date.vs_month(in: calendar))
+        
+        return headerView
     }
 }
 
@@ -62,17 +78,21 @@ extension VSMonthCell: UICollectionViewDelegate {
 }
 
 extension VSMonthCell: UICollectionViewDelegateFlowLayout {
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let width = frame.size.width / 7
-        let height = frame.size.height / 7
-        return CGSizeMake(width, height)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: frame.size.width, height: frame.size.height / 5)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = frame.size.width / 7
+        let height = frame.size.height / 7
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 2
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
 }

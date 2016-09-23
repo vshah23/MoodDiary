@@ -18,6 +18,6 @@ class VSCalendarDataSource: VSCalendarDataSourceProtocol {
             return String()
         }
         
-        return calendar.shortMonthSymbols[month - 1].uppercaseString //subtract 1 for zero indexing
+        return calendar.shortMonthSymbols[month - 1].uppercased() //subtract 1 for zero indexing
     }
 }

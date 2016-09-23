@@ -8,12 +8,16 @@
 
 import Foundation
 
-extension NSDate {
+extension Date {
     //returns the number of years between self and the argument in the current calendar
-    final func vs_numberOfYearsUntil(date: NSDate, in calendar: NSCalendar) -> Int {
-        let currentYearComponent = calendar.component(.Year, fromDate: self)
-        let dateYearComponent = calendar.component(.Year, fromDate: date)
+    func vs_numberOfYearsUntil(_ date: Date, in calendar: Calendar) -> Int {
+        let currentYearComponent = calendar.component(.year, from: self)
+        let dateYearComponent = calendar.component(.year, from: date)
         
         return abs(currentYearComponent - dateYearComponent)
+    }
+    
+    func vs_month(in calendar: Calendar) -> Int {
+        return calendar.component(.month, from: self)
     }
 }

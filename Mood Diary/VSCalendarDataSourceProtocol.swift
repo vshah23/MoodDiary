@@ -9,10 +9,10 @@
 import Foundation
 
 protocol VSCalendarDataSourceProtocol {
-    var startDate: NSDate { get }
-    var endDate: NSDate { get }
+    var startDate: Date { get }
+    var endDate: Date { get }
     
-    func numberOfDaysForMonthInDate(date: NSDate) -> Int
+    func numberOfDaysForMonthInDate(_ date: Date) -> Int
     func numberOfYearsInbetweenStartAndEndDates() -> Int
     
     func title(forYear year: Int) -> String
@@ -20,21 +20,21 @@ protocol VSCalendarDataSourceProtocol {
 }
 
 extension VSCalendarDataSourceProtocol {
-    var calendar: NSCalendar {
+    var calendar: Calendar {
         get {
-            return NSCalendar.currentCalendar()
+            return Calendar.current
         }
     }
     
-    var startDate: NSDate {
+    var startDate: Date {
         get {
-            return NSDate.distantPast()
+            return Date.distantPast
         }
     }
     
-    var endDate: NSDate {
+    var endDate: Date {
         get {
-            return NSDate.distantFuture()
+            return Date.distantFuture
         }
     }
     
@@ -44,8 +44,8 @@ extension VSCalendarDataSourceProtocol {
         }
     }
     
-    final func numberOfDaysForMonthInDate(date: NSDate) -> Int {
-        let range = calendar.rangeOfUnit(.Day, inUnit: .Month, forDate: date)
+    final func numberOfDaysForMonthInDate(_ date: Date) -> Int {
+        let range = (calendar as NSCalendar).range(of: .day, in: .month, for: date)
         return range.length
     }
     
