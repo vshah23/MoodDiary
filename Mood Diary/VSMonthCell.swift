@@ -24,7 +24,7 @@ class VSMonthCell: UICollectionViewCell {
         super.awakeFromNib()
         
         collectionView.register(R.nib.vSDayCell)
-        collectionView.register(R.nib.vSTitleHeaderView, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader)
+        collectionView.register(R.nib.vSMonthTitleHeaderView, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader)
     }
     
     func configure(forMonth month: Int, year: Int, dataSource: VSCalendarDataSource) {
@@ -49,7 +49,7 @@ extension VSMonthCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.dayCell, for: indexPath)!,
-        day = (indexPath as NSIndexPath).row + 1 //add one since indexPaths are zero indexed
+        day = (indexPath as NSIndexPath).item + 1 //add one since indexPaths are zero indexed
         
         cell.dayLabel.text = "\(day)"
         
@@ -65,7 +65,7 @@ extension VSMonthCell: UICollectionViewDataSource {
         }
         
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                         withReuseIdentifier: R.reuseIdentifier.vSTitleHeaderView,
+                                                                         withReuseIdentifier: R.reuseIdentifier.vSMonthTitleHeaderView,
                                                                          for: indexPath)!
         headerView.titleLabel.text = sharedDataSource?.title(forMonth: date.vs_month(in: calendar))
         

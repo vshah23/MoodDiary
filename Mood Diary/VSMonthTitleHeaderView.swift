@@ -1,5 +1,5 @@
 //
-//  VSTitleHeaderView.swift
+//  VSMonthTitleHeaderView.swift
 //  Mood Diary
 //
 //  Created by Vikas Shah on 9/22/16.
@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-class VSTitleHeaderView: UICollectionReusableView {
+class VSMonthTitleHeaderView: UICollectionReusableView {
     @IBOutlet weak var titleLabel: UILabel!
 }

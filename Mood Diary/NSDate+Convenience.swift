@@ -20,4 +20,8 @@ extension Date {
     func vs_month(in calendar: Calendar) -> Int {
         return calendar.component(.month, from: self)
     }
+    
+    func vs_year(in calendar: Calendar) -> Int {
+        return calendar.component(.year, from: self)
+    }
 }
