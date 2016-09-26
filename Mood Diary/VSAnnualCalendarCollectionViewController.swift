@@ -81,17 +81,8 @@ extension VSAnnualCalendarCollectionViewController {
 }
 
 extension VSAnnualCalendarCollectionViewController {
-    func scrollToCurrentMonth(animated: Bool) {
-        let currentYear = Date().vs_year(in: calendarDataSource.calendar)
-        let indexPath = IndexPath(item: 0, section: currentYear)
-
-        guard let collectionView = collectionView,
-            let attributes = collectionView.collectionViewLayout.layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionHeader, at: indexPath) else {
-            return
-        }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let newContentOffset = CGPoint(x: collectionView.contentOffset.x, y: attributes.frame.origin.y - collectionView.contentInset.top)
-        collectionView.setContentOffset(newContentOffset, animated: animated)
     }
 }
 
@@ -124,5 +115,24 @@ extension VSAnnualCalendarCollectionViewController: UICollectionViewDelegateFlow
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize.zero
+    }
+}
+
+extension VSAnnualCalendarCollectionViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
+    func scrollToCurrentMonth(animated: Bool) {
+        let currentYear = Date().vs_year(in: calendarDataSource.calendar)
+        let indexPath = IndexPath(item: 0, section: currentYear)
+
+        guard let collectionView = collectionView,
+            let attributes = collectionView.collectionViewLayout.layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionHeader, at: indexPath) else {
+            return
+        }
+        
+        let newContentOffset = CGPoint(x: collectionView.contentOffset.x, y: attributes.frame.origin.y - collectionView.contentInset.top)
+        collectionView.setContentOffset(newContentOffset, animated: animated)
     }
 }

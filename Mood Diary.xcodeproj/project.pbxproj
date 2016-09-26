@@ -31,6 +31,7 @@
 		1DAB8D3F1D034A1600F41DDC /* VSDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DAB8D3E1D034A1600F41DDC /* VSDayCell.xib */; };
 		1DAB8D481D03693200F41DDC /* MDAnnualCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB8D471D03693200F41DDC /* MDAnnualCalendarViewController.swift */; };
 		1DB815181CFFDA82002BBDA3 /* VSCalendarDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB815171CFFDA82002BBDA3 /* VSCalendarDataSourceProtocol.swift */; };
+		1DEC0DCA1D98CAE600F9762E /* VSMonthlyCalendarCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC0DC91D98CAE600F9762E /* VSMonthlyCalendarCollectionViewController.swift */; };
 		72CAFB5410EEC69DF8F393CF /* Pods_Mood_DiaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71A1E093DC94733DA06C5B8 /* Pods_Mood_DiaryTests.framework */; };
 		BC2C6DB2CF0C94A687DBA91C /* Pods_Mood_Diary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E350F0D0E611415BD7A042 /* Pods_Mood_Diary.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		1DAB8D3E1D034A1600F41DDC /* VSDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VSDayCell.xib; sourceTree = "<group>"; };
 		1DAB8D471D03693200F41DDC /* MDAnnualCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAnnualCalendarViewController.swift; sourceTree = "<group>"; };
 		1DB815171CFFDA82002BBDA3 /* VSCalendarDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VSCalendarDataSourceProtocol.swift; path = "Mood Diary/VSCalendarDataSourceProtocol.swift"; sourceTree = "<group>"; };
+		1DEC0DC91D98CAE600F9762E /* VSMonthlyCalendarCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSMonthlyCalendarCollectionViewController.swift; sourceTree = "<group>"; };
 		26382DC837678871E5701279 /* Pods-Mood DiaryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mood DiaryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mood DiaryTests/Pods-Mood DiaryTests.release.xcconfig"; sourceTree = "<group>"; };
 		2EC36D15F391D15FCB86DFDE /* Pods-Mood DiaryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mood DiaryUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mood DiaryUITests/Pods-Mood DiaryUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4BF64B4126B196AB6E1544C8 /* Pods-Mood Diary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mood Diary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mood Diary/Pods-Mood Diary.debug.xcconfig"; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				1DAB8D291D013C5A00F41DDC /* VSAnnualCalendarCollectionViewController.swift */,
+				1DEC0DC91D98CAE600F9762E /* VSMonthlyCalendarCollectionViewController.swift */,
 			);
 			name = "1. Controller";
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 			files = (
 				1D80F89F1CEAA29E003241A5 /* NSManagedObjectContext+Convenience.swift in Sources */,
 				1DAB8D2A1D013C5A00F41DDC /* VSAnnualCalendarCollectionViewController.swift in Sources */,
+				1DEC0DCA1D98CAE600F9762E /* VSMonthlyCalendarCollectionViewController.swift in Sources */,
 				1DAB8D481D03693200F41DDC /* MDAnnualCalendarViewController.swift in Sources */,
 				1DAB8D2D1D013E8C00F41DDC /* VSCalendarDataSource.swift in Sources */,
 				1DB815181CFFDA82002BBDA3 /* VSCalendarDataSourceProtocol.swift in Sources */,
